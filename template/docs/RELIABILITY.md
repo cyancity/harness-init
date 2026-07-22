@@ -1,0 +1,11 @@
+# Reliability
+
+Define the operational bar for the repository.
+
+## Areas (fill in as project grows)
+
+- Startup and health expectations.
+- Logging, metrics, and tracing conventions.
+- Timeouts, retries, and backoff rules.
+- Local validation and future pipeline validation for critical paths.
+- Incident notes, common failure modes, and recovery steps.
