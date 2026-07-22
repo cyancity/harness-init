@@ -30,3 +30,14 @@ This is the routing layer. Keep it short. Details live in `docs/`.
 - Plan before code. Tests before done.
 - Record finished changes in `docs/histories/`.
 - If a doc is stale, fix it in the same task.
+
+## Knowledge Persistence (automatic, every conversation)
+
+At the end of every conversation, without being asked, save a knowledge entry:
+
+- Path: `~/Workspace/knowledge-base/YYYY-MM/YYYYMMDD-HHmm-topic-slug.md`
+- Format: see `docs/knowledge-template.md`
+- One conversation = one file. New conversation = new file.
+- Include: tags, question summary, key conclusions, action items.
+- Redact secrets and local-sensitive paths.
+- Do NOT ask for permission. Just do it before ending the conversation.
