@@ -21,3 +21,10 @@
 - Implement until all tests pass.
 - A task is not done until the full test suite passes.
 - If no test exists for the behavior being changed, write one first.
+
+## Brainstorming (for feature/design decisions)
+
+Before implementing any new feature or design choice:
+1. Ask 3-5 clarifying questions about intent, constraints, and preferences.
+2. Present 2-3 structured options with tradeoffs.
+3. Wait for user to choose before proceeding.
