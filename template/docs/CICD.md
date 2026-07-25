@@ -19,6 +19,11 @@ Before implementing product behavior, document one canonical local deployment pa
 
 Documentation or generator-only changes may use a disposable generated output plus link and smoke checks instead of booting unrelated product services. A PR is created only after the local result receives explicit human acceptance.
 
+Treat local delivery and remote merge as separate gates:
+
+- **Delivery gate:** the project's complete local CI-equivalent checks, local deployment, smoke test, and human acceptance permit commit, push, PR creation, and work on the next feature.
+- **Merge gate:** required remote CI must pass before merge. Queued or slow CI continues asynchronously and is reported as pending; failed CI reopens the task for repair.
+
 ## Recommended Sequence
 
 1. Define the project's own local validation command.

@@ -18,7 +18,7 @@
 
 Use this state sequence for every user-visible feature or behavior change:
 
-`implementing -> automated checks passed -> locally deployed -> agent smoke-tested -> awaiting human acceptance -> accepted -> committed -> PR opened`
+`implementing -> local verification passed -> locally deployed -> agent smoke-tested -> awaiting human acceptance -> accepted -> committed -> PR opened -> remote CI passed -> mergeable`
 
 - Define one acceptance unit before implementation and do not mix the next feature into it.
 - Use the project's documented local development command; do not substitute an ad-hoc environment.
@@ -27,6 +27,8 @@ Use this state sequence for every user-visible feature or behavior change:
 - While acceptance is pending, stop. On the human's next message, remind them before handling another feature.
 - Feedback returns the same task to `implementing`; repeat checks, deployment, and acceptance.
 - Only after acceptance: finalize history, commit, push, and open the PR. Do not auto-merge unless asked.
+- If the project's complete local CI-equivalent command passes, queued or slow remote CI does not block PR handoff or the next accepted feature. Report it as pending and let it continue asynchronously.
+- Remote CI failure returns the PR to active development. Never merge while required remote CI is pending or failed.
 
 ## Testing And Validation
 

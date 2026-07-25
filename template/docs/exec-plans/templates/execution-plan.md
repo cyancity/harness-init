@@ -30,6 +30,7 @@
 - Agent smoke test: `pending`
 - Human acceptance: `pending`
 - Commit and PR: `blocked until acceptance`
+- Remote CI: `pending; does not block handoff, blocks merge`
 
 ## Status
 
