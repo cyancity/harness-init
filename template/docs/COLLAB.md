@@ -14,11 +14,26 @@
 - Prefer small, scoped pull requests.
 - Call out risks, migrations, and deferred follow-ups explicitly.
 
+## Feature Delivery Gate
+
+Use this state sequence for every user-visible feature or behavior change:
+
+`implementing -> automated checks passed -> locally deployed -> agent smoke-tested -> awaiting human acceptance -> accepted -> committed -> PR opened`
+
+- Define one acceptance unit before implementation and do not mix the next feature into it.
+- Use the project's documented local development command; do not substitute an ad-hoc environment.
+- Give the human the URL or application entry point, test data, steps, and expected result.
+- Explicit acceptance such as "approved" or "accepted" advances the task. Silence does not.
+- While acceptance is pending, stop. On the human's next message, remind them before handling another feature.
+- Feedback returns the same task to `implementing`; repeat checks, deployment, and acceptance.
+- Only after acceptance: finalize history, commit, push, and open the PR. Do not auto-merge unless asked.
+
 ## Testing And Validation
 
 - Every meaningful code change leaves behind stronger verification than before.
 - Prefer repository-native commands that agents can run directly.
 - If the app has a UI, make it locally bootable and testable.
+- A failed deployment or smoke check blocks the human acceptance request.
 
 ## Configuration Hygiene
 

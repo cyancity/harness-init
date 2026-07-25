@@ -1,8 +1,12 @@
 # History Entry Template
 
-## Request
+## Status
 
-<!-- Concise user request, redacted of secrets and local paths -->
+`implementing`
+
+## Conversation
+
+<!-- Append every user message verbatim with mandatory redaction. Summarize the matching assistant response. Stop at explicit acceptance. -->
 
 ## Changes
 
@@ -15,3 +19,11 @@
 ## Key Files
 
 <!-- Most important files touched -->
+
+## Verification And Local Deployment
+
+<!-- Commands run, results, local entry point, test data, and smoke-test evidence -->
+
+## Human Acceptance
+
+<!-- awaiting human acceptance | accepted; include the user's exact redacted acceptance wording -->

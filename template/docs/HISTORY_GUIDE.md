@@ -1,13 +1,15 @@
 # Change History Guide
 
-Use `docs/histories/` for finished code-change tasks. Pure Q&A or research tasks do not need a history entry unless they result in repository changes.
+Use `docs/histories/` for repository-changing tasks. Start the entry when work begins and keep it uncommitted until the task is accepted.
 
 ## Requirements
 
 - Create or update one history file per completed code-change task.
-- Preserve the user request in concise, useful form.
-- Keep secrets, local paths, and sensitive values out of the record.
+- Record every user message from the feature request through explicit acceptance verbatim, except mandatory redaction.
+- Summarize each assistant response to its decisions, actions, and results.
+- Replace secrets, tokens, keys, real phone numbers, private environment values, local absolute paths, and token-bearing URLs with named `[REDACTED_*]` placeholders.
 - If a task spans multiple rounds, update the same file instead of creating duplicates.
+- Silence is not acceptance. Leave the entry in `awaiting human acceptance` until the user explicitly approves it.
 
 ## Layout And Naming
 
@@ -17,7 +19,11 @@ Use `docs/histories/` for finished code-change tasks. Pure Q&A or research tasks
 
 ## What To Include
 
-- The user request or a concise redacted version.
+- The chronological redacted conversation record.
 - Main code and documentation changes.
 - Design intent and why the chosen approach was taken.
 - Most important files touched.
+- Actual automated checks, local deployment, smoke-test evidence, and the inspection entry point.
+- Feedback rounds and the user's final acceptance wording.
+
+The conversation window ends at explicit acceptance. Post-acceptance Git and PR results belong in the PR description; this avoids an endless follow-up commit solely to record the response announcing that commit.

@@ -7,10 +7,11 @@ This is the routing layer. Keep it short. Details live in `docs/`.
 - `docs/CORE_BELIEFS.md`: operating principles, plan-first, TDD.
 - `docs/COLLAB.md`: collaboration and commit rules.
 - `docs/ARCHITECTURE.md`: repo shape and boundary rules.
+- `docs/HISTORY_GUIDE.md`: start the task history draft and conversation record.
 
 ## Read Before Finishing A Task
 
-- `docs/HISTORY_GUIDE.md`: record what changed and why.
+- `docs/HISTORY_GUIDE.md`: finalize validation and acceptance evidence.
 - `docs/QUALITY_SCORE.md`: check weakest areas.
 
 ## Read When The Task Needs It
@@ -28,5 +29,9 @@ This is the routing layer. Keep it short. Details live in `docs/`.
 ## Working Rules
 
 - Plan before code. Tests before done.
-- Record finished changes in `docs/histories/`.
+- Work on one acceptance unit at a time.
+- After automated checks, deploy the change to the project's documented local development environment and smoke-test it.
+- Ask the human to inspect the local result. Until they explicitly accept it, do not start the next feature, commit, push, or open a PR.
+- If the human returns with another request while acceptance is pending, remind them of the pending acceptance first.
+- Keep the task's redacted conversation and evidence in `docs/histories/`.
 - If a doc is stale, fix it in the same task.
