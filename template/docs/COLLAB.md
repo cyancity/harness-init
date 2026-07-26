@@ -27,8 +27,10 @@ Use this state sequence for every user-visible feature or behavior change:
 - While acceptance is pending, stop. On the human's next message, remind them before handling another feature.
 - Feedback returns the same task to `implementing`; repeat checks, deployment, and acceptance.
 - Only after acceptance: finalize history, commit, push, and open the PR. Do not auto-merge unless asked.
+- Run the exact post-acceptance sequence in `docs/DELIVERY.md`; delivery ends at a draft PR and never includes merging the default branch.
 - If the project's complete local CI-equivalent command passes, queued or slow remote CI does not block PR handoff or the next accepted feature. Report it as pending and let it continue asynchronously.
 - Remote CI failure returns the PR to active development. Never merge while required remote CI is pending or failed.
+- The human may mark the draft PR ready; repository automation may then merge it after required CI passes. The agent never marks ready or calls merge itself.
 
 ## Testing And Validation
 
