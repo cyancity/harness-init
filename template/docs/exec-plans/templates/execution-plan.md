@@ -23,8 +23,18 @@
 
 <!-- Append entries as work progresses -->
 
+## Acceptance Gate
+
+- Automated checks: `pending`
+- Local deployment: `pending`
+- Agent smoke test: `pending`
+- Human acceptance: `pending`
+- Commit and PR: `blocked until acceptance`
+- Remote CI: `pending; does not block handoff, blocks merge`
+
 ## Status
 
 - [ ] Active
+- [ ] Awaiting human acceptance
 - [ ] Completed
 - [ ] Archived
