@@ -55,7 +55,7 @@ Use this state sequence for every user-visible feature or behavior change:
 
 Human 明确验收通过后（如 `Accepted. Merge.`），Agent 接管全部交付：
 
-1. 确认当前分支是 feature 分支，绝不是默认分支。
+1. 确认当前分支是 **`<agent-name>/` 前缀的 feature 分支**（如 `codex/foo`、`claude/bar`），绝不是默认分支。
 2. Finalize the task history with the human's exact redacted acceptance wording.
 3. Confirm no product change occurred after the recorded local verification; rerun affected checks if it did.
 4. Run `git diff --check` and review the complete change scope.
