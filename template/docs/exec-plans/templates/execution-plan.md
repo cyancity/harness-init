@@ -29,7 +29,7 @@
 - Local deployment: `pending`
 - Agent smoke test: `pending`
 - Human acceptance: `pending`
-- Commit and PR: `blocked until acceptance`
+- Commit and PR: `blocked until acceptance; after acceptance Agent handles split commits, PR, conflict resolution and merge`
 - Remote CI: `pending; does not block handoff, blocks merge`
 
 ## Status

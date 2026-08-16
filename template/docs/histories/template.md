@@ -6,11 +6,11 @@
 
 ## Conversation
 
-<!-- Append every user message verbatim with mandatory redaction. Summarize the matching assistant response. Stop at explicit acceptance. -->
+<!-- Append every user requirement and decision verbatim with mandatory redaction. Skip project-external chat (term explanations, global tool installs). Summarize the matching assistant response. Stop at explicit acceptance. -->
 
 ## Changes
 
-<!-- Main code and documentation changes -->
+<!-- Main code and documentation changes, split by logical unit (one entry per commit) -->
 
 ## Design Intent
 

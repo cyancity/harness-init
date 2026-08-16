@@ -1,31 +1,33 @@
 # AGENTS.md
 
-This is the routing layer. Keep it short. Details live in `docs/`.
+This is the routing layer. Keep it short; details live in `docs/`.
 
 ## Read At The Start Of Each Task
 
-- `docs/CORE_BELIEFS.md`: operating principles, plan-first, TDD.
-- `docs/COLLAB.md`: collaboration and commit rules.
+- `docs/WORKFLOW.md`: operating principles, commit rules, acceptance and delivery.
 - `docs/ARCHITECTURE.md`: repo shape and boundary rules.
-- `docs/HISTORY_GUIDE.md`: start the task history draft and conversation record.
+- `docs/HISTORY_GUIDE.md`: start the task history draft and requirement record.
 
 ## Read Before Finishing A Task
 
 - `docs/HISTORY_GUIDE.md`: finalize validation and acceptance evidence.
-- `docs/DELIVERY.md`: after acceptance, publish the change and stop at a draft PR.
-- `docs/QUALITY_SCORE.md`: check weakest areas.
+- `docs/WORKFLOW.md`: after acceptance, follow the post-acceptance delivery sequence (Agent 负责合并).
 
 ## Read When The Task Needs It
 
-- `docs/SECURITY.md`: auth, secrets, data handling.
-- `docs/RELIABILITY.md`: health, logging, retries.
-- `docs/FRONTEND.md`: UI, design system, visual rules.
-- `docs/CICD.md`: pipeline and deployment.
-- `docs/PRODUCT_SENSE.md`: user value and prioritization.
-- `docs/SUPPLY_CHAIN_SECURITY.md`: dependencies and provenance.
+- `docs/SECURITY.md`: auth, secrets, dependencies and supply chain.
+- `docs/OPS.md`: reliability, CI/CD, local acceptance contract.
+- `docs/PRODUCT.md`: user value, frontend and design rules.
+- `docs/QUALITY_SCORE.md`: check weakest areas.
 - `docs/PLANS_GUIDE.md`: when to create an execution plan.
-- `docs/releases/README.md`: user-facing release notes.
-- `docs/references/README.md`: curated external references.
+
+## 全局记忆（跨 Agent 共享）
+
+本机所有 coding agent 共享 `~/memory/`（git 仓库）：
+
+- 会话开始：读 `~/memory/profile.md` + `~/memory/conventions.md`（我的画像与约定）。
+- 当前工作目录对应某个项目时，读 `~/memory/projects/<项目名>/state.md`（薄状态：进展/卡点/下一步）；项目细节仍以本仓库 `docs/` 为准。
+- 会话结束：有价值的决策/坑/进度更新回 `~/memory/projects/<项目名>/` 并带身份提交（`git -C ~/memory -c user.name=<agent> commit`）。
 
 ## Working Rules
 
@@ -34,7 +36,7 @@ This is the routing layer. Keep it short. Details live in `docs/`.
 - After automated checks, deploy the change to the project's documented local development environment and smoke-test it.
 - Ask the human to inspect the local result. Until they explicitly accept it, do not start the next feature, commit, push, or open a PR.
 - If the human returns with another request while acceptance is pending, remind them of the pending acceptance first.
-- A complete local verification permits PR handoff while remote CI is queued or running; remote CI must pass before merge.
-- The agent never marks a draft PR ready or invokes merge. Project automation may merge only after the human marks the PR ready and required CI passes.
-- Keep the task's redacted conversation and evidence in `docs/histories/`.
+- **显式验收通过后**：Agent 负责全部交付（拆分提交、开 PR、解决冲突、合并、报告）。
+- 远端 CI 未通过前不合并。
+- Keep the task's redacted requirement/decision record and evidence in `docs/histories/`.
 - If a doc is stale, fix it in the same task.

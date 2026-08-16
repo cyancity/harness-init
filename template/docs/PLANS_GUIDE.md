@@ -15,7 +15,6 @@ Use execution plans for tasks too large, risky, or stateful for short chat conte
 - Completed plans: `docs/exec-plans/completed/`
 - Template: `docs/exec-plans/templates/execution-plan.md`
 - Deferred debt: `docs/exec-plans/tech-debt-tracker.md`
-
 ## Expectations
 
 - State goal, scope, risks, and validation strategy.
